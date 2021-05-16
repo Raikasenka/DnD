@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 
 namespace DnDProject
 {
@@ -110,7 +108,8 @@ namespace DnDProject
 		public List<Skill> GetSkillList() { return SkillList; }
 
 		/*Multiple overloads will be required, will ask for a MonsterList of a specific area and will take that as an input
-			Monster createMonster(int id, String areaMonsterPoolFile)*/
+			Monster createMonster(int id, String areaMonsterPoolFile)
+			Edit, that's bs. We can simply define the monster pool somewhere else and have the id part of a dictionary or something of the sort*/
 		/// <summary>
 		/// Performs the logic to generate a monster object
 		/// Note: Multiple overloads will be required, will ask for a MonsterList of a specific area and will take that as an input
@@ -123,7 +122,7 @@ namespace DnDProject
 		{
 			try 
 			{
-				string monsterData = File.ReadLines(Program.workingFolder+"\\MonsterList.txt").Skip(id).Take(1).First();
+				string monsterData = Resources.MonsterList.Replace("\r","").Split("\n")[id];
 				string[] data = monsterData.Split(",");
 				int i = 0;
 				string type = data[i++];
@@ -150,5 +149,6 @@ namespace DnDProject
 		/// </summary>
 		/// <returns></returns>
 		public bool IsAlive() { return CurrentHP > 0; }
+
 	}
 }

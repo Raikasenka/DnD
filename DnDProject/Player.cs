@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace DnDProject
 {
@@ -207,7 +208,7 @@ namespace DnDProject
 					Console.WriteLine("Illegal file selection.\nTerminating save process...");
 					return;
 				}
-				string location = Program.workingFolder;
+				string location = new Regex("^.*DnDProject").Match(AppDomain.CurrentDomain.BaseDirectory).Value;
 				if (!Directory.Exists(location + "\\UserSaves"))
 				{
 					Directory.CreateDirectory(location + "\\UserSaves");
@@ -241,7 +242,7 @@ namespace DnDProject
 					Console.WriteLine("Illegal file selection.");
 					goto Start;
 				}
-				string location = Program.workingFolder;
+				string location = new Regex("^.*DnDProject").Match(AppDomain.CurrentDomain.BaseDirectory).Value;
 				string[] data = Array.Empty<string>();
 				using (StreamReader file = new StreamReader(location + "\\UserSaves\\player" + loadFile + ".dat"))
 				{ 

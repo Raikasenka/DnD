@@ -114,6 +114,7 @@ namespace DnDProject
 		}
 		//These should be morphed into generalized Player->Entity and Entity->Entity where the result become entity.TakeDamage
 		//This also allows the precedent of aoe attacks to go through in a foreach relative 'enemies' to roll the attack or morph one to return an int.
+		//This format should also include a format of Entity->Target
 		private static void PlayerAttack(Player player, Monster enemy)
 		{
 			int damage = player.Attack();
@@ -132,6 +133,7 @@ namespace DnDProject
 		{
 			List<Skill> skills=player.SkillList;
 			Console.WriteLine(Constants.LEAVESKILLPROMPT);
+			Console.WriteLine("0. Leave");
 			for(int i=0;i<skills.Count;i++){
 				Console.WriteLine(i+1+". "+skills[i].Name);
 			}
@@ -140,7 +142,7 @@ namespace DnDProject
 			while(true){
 				try {
 					string str = Console.ReadLine();
-					if (str.Trim().Equals("Leave")){
+					if (str.Trim().Equals("0")){
 						Console.WriteLine();
 						throw new Exception();
 					}

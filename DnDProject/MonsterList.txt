@@ -1,9 +1,9 @@
-//Name,diceRolled,hitDie,STR,DEX,CON,INT,WIS,CHR,page#a,SkillList
+//Name,diceRolled,hitDie,STR,DEX,CON,INT,WIS,CHR,page#,SkillList
 Aarakocra,3,8,10,14,10,11,12,11,12,Bite-Javelin
-Aboleth,18,10,21,9,15,18,15,18,13
-Abominable Yeti,11,12,24,10,22,9,13,9,306
-Acolyte,2,8,10,10,10,10,14,11,342
-Adult Black Dragon,17,12,23,14,21,14,13,17,88
+Aboleth,18,10,21,9,15,18,15,18,13,Tentacle-Tail
+Abominable Yeti,11,12,24,10,22,9,13,9,306,Multiattack-Claw-Chilling Gaze-Cold Breath
+Acolyte,2,8,10,10,10,10,14,11,342,Club
+Adult Black Dragon,17,12,23,14,21,14,13,17,88,Multiattack-Bite-Claw-Tail-Frightful Presence-Acid Breath
 Adult Blue Dracolich,18,12,25,10,23,16,15,19,84
 Adult Blue Dragon,18,12,25,10,23,16,15,19,91
 Adult Brass Dragon,15,12,23,10,21,14,13,17,105
@@ -409,7 +409,7 @@ Vampire,297
 Vampire Spawn,298
 Veteran,350
 Vine Blight,32
-Violet Fungus,// 138
+Violet Fungus,138
 Vrock,64
 Vulture,339
 Warhorse,340

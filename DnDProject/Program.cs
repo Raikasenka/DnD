@@ -1,10 +1,7 @@
-﻿using System.IO;
-
-namespace DnDProject
+﻿namespace DnDProject
 {
 	public class Program
 	{
-		public static readonly string workingFolder = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
 		public static void Main(string[] args)
 		{
 			Setup();
@@ -12,6 +9,8 @@ namespace DnDProject
 			{
 				EquippedWeapon = new Weapon("Falchion", 3, 4, 0, "Blunt")
 			};
+			user.Save();
+			Player.Load();
 			FightManager.Fight(user, Monster.CreateMonster(1));
 			//FightManager.Fight(new Entity[] { user, Monster.CreateMonster(1), Monster.CreateMonster(1) });
 		}
